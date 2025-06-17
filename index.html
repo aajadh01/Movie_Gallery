@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Top Movies Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Top Telugu Movies You Shouldn't Miss</h1>
+      <p class="intro">
+        Explore this curated list of some of the best Telugu movies loved for their storytelling,
+        performances, music, and cinematic brilliance.
+      </p>
+      <!-- NEW: Watchlist Button in top right -->
+      <button class="watchlist-toggle-btn" onclick="toggleWatchlistModal()">
+        🎬 My Watchlist (<span id="watchlistCount">0</span>)
+      </button>
+    </header>
+
+    <main class="gallery">
+      <div class="movie-card" onclick="showMovieDetails('Lucky Baskhar')">
+        <img src="https://m.media-amazon.com/images/M/MV5BMjEzN2ZjYjUtZTI3NC00MzMyLWJiNDAtMDBiZGEzNTBiY2RkXkEyXkFqcGc@._V1_.jpg" alt="Lucky Baskhar" class="movie-poster" />
+        <h3 class="movie-title">Lucky Baskhar</h3>
+        <p class="movie-year">2024</p>
+        <p class="movie-description">"Lucky Bhaskar" is a comedy-drama about a honest bank employee who gets entangled in risky financial schemes to support his family.</p>
+        <a href="https://youtu.be/Kv5RKsqVe-Y?si=ohWjuN6TdBUD8id-" target="_blank" class="trailer-link" onclick="event.stopPropagation()">Watch Trailer</a>
+        <button class="watchlist-btn" onclick="event.stopPropagation(); toggleWatchlist('Lucky Baskhar', 'https://m.media-amazon.com/images/M/MV5BMjEzN2ZjYjUtZTI3NC00MzMyLWJiNDAtMDBiZGEzNTBiY2RkXkEyXkFqcGc@._V1_.jpg', '2024', 'Lucky Bhaskar is a comedy-drama about a honest bank employee who gets entangled in risky financial schemes to support his family.', 'https://youtu.be/Kv5RKsqVe-Y?si=ohWjuN6TdBUD8id-')">❤️ Add to Watchlist</button>
+      </div>
+
+      <div class="movie-card" onclick="showMovieDetails('Hi Nanna')">
+        <img src="https://femmeflicks.com/wp-content/uploads/2024/02/Hi-Nanna-Movie.jpg" alt="Hi Nanna" class="movie-poster" />
+        <h3 class="movie-title">Hi Nanna</h3>
+        <p class="movie-year">2023</p>
+        <p class="movie-description">A heartfelt story about a father's love and a daughter's curiosity surrounding her missing mother.</p>
+        <a href="https://youtu.be/Iz97_kxHaSc?si=jrnrMo0mRww9jOH6" target="_blank" class="trailer-link" onclick="event.stopPropagation()">Watch Trailer</a>
+        <button class="watchlist-btn" onclick="event.stopPropagation(); toggleWatchlist('Hi Nanna', 'https://femmeflicks.com/wp-content/uploads/2024/02/Hi-Nanna-Movie.jpg', '2023', 'A heartfelt story about a father\\'s love and a daughter\\'s curiosity surrounding her missing mother.', 'https://youtu.be/Iz97_kxHaSc?si=jrnrMo0mRww9jOH6')">❤️ Add to Watchlist</button>
+      </div>
+
+      <div class="movie-card" onclick="showMovieDetails('Rakshasudu')">
+        <img src="https://m.media-amazon.com/images/M/MV5BMWE2ZjY1NTEtZWRjMy00M2RkLWJkODYtNzFmMWNiODNmNjUxXkEyXkFqcGc@._V1_.jpg" alt="Rakshasudu" class="movie-poster" />
+        <h3 class="movie-title">Rakshasudu</h3>
+        <p class="movie-year">2019</p>
+        <p class="movie-description">*Rakshasudu* is a Telugu psychological thriller about a police officer hunting a serial killer targeting teenagers.</p>
+        <a href="https://youtu.be/DF6dmkWXTlY?si=wgsOfhU-8QMN51lU" target="_blank" class="trailer-link" onclick="event.stopPropagation()">Watch Trailer</a>
+        <button class="watchlist-btn" onclick="event.stopPropagation(); toggleWatchlist('Rakshasudu', 'https://m.media-amazon.com/images/M/MV5BMWE2ZjY1NTEtZWRjMy00M2RkLWJkODYtNzFmMWNiODNmNjUxXkEyXkFqcGc@._V1_.jpg', '2019', '*Rakshasudu* is a Telugu psychological thriller about a police officer hunting a serial killer targeting teenagers.', 'https://youtu.be/DF6dmkWXTlY?si=wgsOfhU-8QMN51lU')">❤️ Add to Watchlist</button>
+      </div>
+
+       <div class="movie-card" onclick="showMovieDetails('Sita Ramam')">
+        <img src="https://m.media-amazon.com/images/M/MV5BYWE0NDNiNzEtNThmMi00NjZlLTk3NDAtYzIzOWNmNWQyYTI3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Sita Ramam" class="movie-poster" />
+        <h3 class="movie-title">Sita Ramam</h3>
+        <p class="movie-year">2022</p>
+        <p class="movie-description">Sita Ramam is a Heart touching romance set in 1964 about an army officer and a mysterious love letter that changes lives</p>
+        <a href="https://youtu.be/Ljk6tGZ1l3A?si=ELwCCZFNJNu24jHQ" target="_blank" class="trailer-link" onclick="event.stopPropagation()">Watch Trailer</a>
+        <button class="watchlist-btn" onclick="event.stopPropagation(); toggleWatchlist('Sita Ramam', 'https://m.media-amazon.com/images/M/MV5BYWE0NDNiNzEtNThmMi00NjZlLTk3NDAtYzIzOWNmNWQyYTI3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg', '2022', 'Sita Ramam is a Heart touching romance set in 1964 about an army officer and a mysterious love letter that changes lives', 'https://youtu.be/Ljk6tGZ1l3A?si=ELwCCZFNJNu24jHQ')">❤️ Add to Watchlist</button>
+      </div>
+
+        <div class="movie-card" onclick="showMovieDetails('Snehitudu')">
+            <img src="https://images.filmibeat.com/img/popcorn/fan_images/1729_20111226_38674300_snehithudu.JPG" alt="Snehitudu" class="movie-poster" />
+            <h3 class="movie-title">Snehitudu</h3>
+            <p class="movie-year">2012</p>
+            <p class="movie-description">Snehitudu is a Telugu film that explores the themes of friendship, love, and the journey of self-discovery.</p>
+            <a href="https://youtu.be/eYZ_bP9xGpQ?si=VtZe2JXq_TeaXaer" target="_blank" class="trailer-link" onclick="event.stopPropagation()">Watch Trailer</a>
+            <button class="watchlist-btn" onclick="event.stopPropagation(); toggleWatchlist('Snehitudu', 'https://images.filmibeat.com/img/popcorn/fan_images/1729_20111226_38674300_snehithudu.JPG', '2012', 'Snehitudu is a Telugu film that explores the themes of friendship, love, and the journey of self-discovery.', 'https://youtu.be/eYZ_bP9xGpQ?si=VtZe2JXq_TeaXaer')">❤️ Add to Watchlist</button>
+        </div>
+
+         <div class="movie-card" onclick="showMovieDetails('Geetha Govindam')">
+            <img src="https://images.filmibeat.com/img/popcorn/fan_images/movie/17251/geetha-govindam-photos-images-61960.jpg" alt="Geetha Govindam" class="movie-poster" />
+            <h3 class="movie-title">Geetha Govindam</h3>
+            <p class="movie-year">2018</p>
+            <p class="movie-description">Geetha Govindam is a romantic comedy about a young man who falls in love with a woman who is already engaged to be married.</p>
+            <a href="https://youtu.be/OYK2eJ0oeg8?si=yUM_2fPgxkMyhy3k" target="_blank" class="trailer-link" onclick="event.stopPropagation()">Watch Trailer</a>
+            <button class="watchlist-btn" onclick="event.stopPropagation(); toggleWatchlist('Geetha Govindam', 'https://images.filmibeat.com/img/popcorn/fan_images/movie/17251/geetha-govindam-photos-images-61960.jpg', '2018', 'Geetha Govindam is a romantic comedy about a young man who falls in love with a woman who is already engaged to be married.', 'https://youtu.be/OYK2eJ0oeg8?si=yUM_2fPgxkMyhy3k')">❤️ Add to Watchlist</button>
+        </div>
+        
+        <div class="movie-card" onclick="showMovieDetails('Jersey')">
+            <img src="https://www.idlebrain.com/movie/photogallery/posters-jersey/images/th_posters-jersey8.jpg" alt="Jersey" class="movie-poster" />
+            <h3 class="movie-title">Jersey</h3>
+            <p class="movie-year">2019</p>
+            <p class="movie-description">Jersey is a sports drama about a cricketer who returns to the game in his 30s to fulfill his son's dream.</p>
+            <a href="https://youtu.be/AjAe_Q1WZ_8?si=6SWOOgjNywl-eEeY" target="_blank" class="trailer-link" onclick="event.stopPropagation()">Watch Trailer</a>
+            <button class="watchlist-btn" onclick="event.stopPropagation(); toggleWatchlist('Jersey', 'https://www.idlebrain.com/movie/photogallery/posters-jersey/images/th_posters-jersey8.jpg', '2019', 'Jersey is a sports drama about a cricketer who returns to the game in his 30s to fulfill his son\\'s dream.', 'https://youtu.be/AjAe_Q1WZ_8?si=6SWOOgjNywl-eEeY')">❤️ Add to Watchlist</button>
+        </div>
+
+        <div class="movie-card" onclick="showMovieDetails('Rangasthalam')">
+            <img src="https://m.media-amazon.com/images/M/MV5BYjhhYjdjYTgtNDMzYy00ODI5LWJjYjMtNGJmOTIyYTZmNGQ3XkEyXkFqcGc@._V1_.jpg" alt="Rangasthalam" class="movie-poster" />
+            <h3 class="movie-title">Rangasthalam</h3>
+            <p class="movie-year">2018</p>
+            <p class="movie-description">Rangasthalam is a period action drama set in the 1980s, focusing on the power struggle in a rural village.</p>
+            <a href="https://youtu.be/sueMmTm-M4Y?si=kiLi4iTJBPz9GLAC" target="_blank" class="trailer-link" onclick="event.stopPropagation()">Watch Trailer</a>
+            <button class="watchlist-btn" onclick="event.stopPropagation(); toggleWatchlist('Rangasthalam', 'https://m.media-amazon.com/images/M/MV5BYjhhYjdjYTgtNDMzYy00ODI5LWJjYjMtNGJmOTIyYTZmNGQ3XkEyXkFqcGc@._V1_.jpg', '2018', 'Rangasthalam is a period action drama set in the 1980s, focusing on the power struggle in a rural village.', 'https://youtu.be/sueMmTm-M4Y?si=kiLi4iTJBPz9GLAC')">❤️ Add to Watchlist</button>
+        </div>
+
+    </main>
+
+    <section class="suggestion-section">
+      <button class="suggestion-btn" onclick="suggestRandomMovie()">🤔 Which Telugu movie should I watch?</button>
+    </section>
+
+    <!--Movie Details Modal -->
+    <div id="movieDetailsModal" class="modal movie-details-modal">
+      <div class="modal-content movie-details-content">
+        <div class="modal-header">
+          <h2 id="movieDetailsTitle">Movie Details</h2>
+          <span class="close" onclick="closeMovieDetails()">&times;</span>
+        </div>
+        <div class="modal-body movie-details-body">
+          <div class="movie-details-container">
+            <div class="movie-poster-section">
+              <img id="movieDetailsPoster" src="/placeholder.svg" alt="" class="movie-details-poster" />
+              <div class="movie-actions">
+                <button id="movieDetailsWatchlistBtn" class="watchlist-btn" onclick="">❤️ Add to Watchlist</button>
+              </div>
+            </div>
+            <div class="movie-info-section">
+              <div class="movie-basic-info">
+                <h3 id="movieDetailsName">Movie Name</h3>
+                <div class="movie-meta">
+                  <span id="movieDetailsYear" class="movie-year">Year</span>
+                  <span id="movieDetailsGenre" class="movie-genre">Genre</span>
+                  <span id="movieDetailsRating" class="movie-rating">⭐ Rating</span>
+                  <span id="movieDetailsDuration" class="movie-duration">Duration</span>
+                </div>
+              </div>
+              
+              <div class="movie-description-section">
+                <h4> 🍿🎬Movie Summary</h4>
+                <p id="movieDetailsDescription">Movie description...</p>
+              </div>
+
+              <div class="movie-cast-section">
+                <h4>👥 Cast & Crew</h4>
+                <div class="cast-info">
+                  <p><strong>Director:</strong> <span id="movieDetailsDirector">Director Name</span></p>
+                  <p><strong>Main Cast:</strong> <span id="movieDetailsCast">Cast Names</span></p>
+                  <p><strong>Music Director:</strong> <span id="movieDetailsMusic">Music Director</span></p>
+                </div>
+              </div>
+
+              <div class="movie-streaming-section">
+                <h4>📺 Where to Watch</h4>
+                <div id="movieStreamingPlatforms" class="streaming-platforms">
+                  <!-- Streaming platforms will be populated here -->
+                </div>
+              </div>
+
+              <div class="movie-links-section">
+                <h4>🔗 Watch & Download Links</h4>
+                <div class="movie-links">
+                  <a id="movieTrailerLink" href="" target="_blank" class="movie-link trailer-link">
+                    🎬 Watch Trailer
+                  </a>
+                  <a id="movieFullLink" href="" target="_blank" class="movie-link full-movie-link">
+                    ▶️ Watch Full Movie
+                  </a>
+                  <a id="movieDownloadLink" href="" target="_blank" class="movie-link download-link">
+                    📥 Download Movie
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Watchlist Modal -->
+    <div id="watchlistModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>🎬 My Movie Watchlist</h2>
+          <span class="close" onclick="toggleWatchlistModal()">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div id="watchlistMovies" class="watchlist-gallery">
+            <p class="empty-watchlist" id="emptyWatchlist">Your watchlist is empty. Add some movies!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Form Section -->
+    <section class="contact-section">
+      <h2>🎥 Movie Suggestion Box</h2>
+      <form id="contactForm" class="contact-form">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          <span class="error-message" id="nameError"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <span class="error-message" id="emailError"></span>
+        </div>
+        <div class="form-group">
+          <label for="movieName">Movie Name:</label>
+          <input type="text" id="movieName" name="movieName" placeholder="Suggest Any Old or New Movies" required>
+          <span class="error-message" id="movieNameError"></span>
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell us why you recommend this movie — what's it about, what makes it interesting, and what type of movie it is (e.g., thriller, romance, action)..." required></textarea>
+          <span class="error-message" id="messageError"></span>
+        </div>
+        <button type="submit" class="submit-btn">📨Send Suggestion</button>
+      </form>
+      <div id="successMessage" class="success-message" style="display: none;">
+        ✅ Message sent successfully! Thank you for Suggesting us.
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
