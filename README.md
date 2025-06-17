@@ -32,27 +32,4 @@ A responsive and interactive movie gallery web app built using **HTML**, **CSS**
 3. To enable the form, replace the EmailJS credentials in `script.js` with your own  
    - [EmailJS Docs](https://www.emailjs.com/docs/)
 
----
-
-## 📸 Preview
-
-![Preview Screenshot](preview.png) <!-- Optional: add an image if available -->
-
----
-
-## 🔗 Live Demo
-
-[👉 Click here to view the live demo](#) <!-- Replace with your actual link -->
-
----
-
-## 📩 Contributing
-
-Feel free to fork the repo and submit pull requests or suggestions!
-
----
-
-## 📜 License
-
-This project is open-source and available under the [MIT License](LICENSE).
 
